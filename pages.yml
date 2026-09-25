@@ -8,7 +8,7 @@ content:
   - name: news
     label: News posts
     type: file
-    path: content/news.json
+    path: news.json
     format: json
     list: true
     fields:
@@ -21,7 +21,7 @@ content:
   - name: fixtures
     label: Draws & results
     type: file
-    path: content/fixtures.json
+    path: fixtures.json
     format: json
     list: true
     fields:
@@ -40,7 +40,7 @@ content:
   - name: events
     label: Club events
     type: file
-    path: content/events.json
+    path: events.json
     format: json
     list: true
     fields:
@@ -53,7 +53,7 @@ content:
   - name: teams
     label: Teams & coaches
     type: file
-    path: content/teams.json
+    path: teams.json
     format: json
     list: true
     fields:
@@ -70,7 +70,7 @@ content:
   - name: sponsors
     label: Sponsors
     type: file
-    path: content/sponsors.json
+    path: sponsors.json
     format: json
     list: true
     fields:
@@ -85,7 +85,7 @@ content:
   - name: about
     label: About the club
     type: file
-    path: content/about.json
+    path: about.json
     format: json
     fields:
       - { name: intro, label: Intro, type: text }
@@ -109,7 +109,7 @@ content:
   - name: juniors
     label: Junior club
     type: file
-    path: content/juniors.json
+    path: juniors.json
     format: json
     fields:
       - { name: intro, label: Intro, type: text }
@@ -133,7 +133,7 @@ content:
   - name: venue
     label: Venue hire
     type: file
-    path: content/venue.json
+    path: venue.json
     format: json
     fields:
       - { name: intro, label: Intro, type: text }
@@ -150,7 +150,7 @@ content:
   - name: gear
     label: Club gear
     type: file
-    path: content/gear.json
+    path: gear.json
     format: json
     fields:
       - { name: intro, label: Intro, type: text }
@@ -168,7 +168,7 @@ content:
   - name: settings
     label: Club settings
     type: file
-    path: content/settings.json
+    path: settings.json
     format: json
     fields:
       - { name: clubName, label: Full club name, type: string }
