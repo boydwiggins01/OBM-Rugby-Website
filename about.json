@@ -1,0 +1,46 @@
+{
+  "intro": "Old Boys Marist is a community rugby club in Whangārei, founded in 1922. Our crest carries the anchor and the cross of the two traditions the club grew from.",
+  "history": "<p>Old Boys Marist has been part of Whangārei rugby since 1922. Replace this section with the club's story: how the club was founded, the merger of Old Boys and Marist, premiership years, notable players and the people who built the club.</p><p>This text is edited under <strong>About the club</strong> in the site editor.</p>",
+  "honours": [
+    {
+      "year": "YYYY",
+      "title": "Add a premiership or trophy win"
+    },
+    {
+      "year": "YYYY",
+      "title": "Add a notable club honour"
+    }
+  ],
+  "committee": [
+    {
+      "role": "President",
+      "name": "To be confirmed",
+      "email": ""
+    },
+    {
+      "role": "Club Captain",
+      "name": "To be confirmed",
+      "email": ""
+    },
+    {
+      "role": "Secretary",
+      "name": "To be confirmed",
+      "email": ""
+    },
+    {
+      "role": "Treasurer",
+      "name": "To be confirmed",
+      "email": ""
+    },
+    {
+      "role": "Junior Club Convenor",
+      "name": "To be confirmed",
+      "email": ""
+    },
+    {
+      "role": "Sponsorship",
+      "name": "To be confirmed",
+      "email": ""
+    }
+  ]
+}

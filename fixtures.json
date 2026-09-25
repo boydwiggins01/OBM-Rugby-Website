@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2027-04-10",
+    "time": "14:45",
+    "team": "Premier",
+    "opponent": "Opponent TBC",
+    "venue": "OBM No. 1",
+    "homeAway": "Home",
+    "ourScore": "",
+    "theirScore": ""
+  },
+  {
+    "date": "2027-04-10",
+    "time": "13:15",
+    "team": "Premier Reserves",
+    "opponent": "Opponent TBC",
+    "venue": "OBM No. 1",
+    "homeAway": "Home",
+    "ourScore": "",
+    "theirScore": ""
+  },
+  {
+    "date": "2027-04-17",
+    "time": "14:45",
+    "team": "Premier",
+    "opponent": "Opponent TBC",
+    "venue": "Away ground",
+    "homeAway": "Away",
+    "ourScore": "",
+    "theirScore": ""
+  },
+  {
+    "date": "2027-04-17",
+    "time": "12:00",
+    "team": "Women",
+    "opponent": "Opponent TBC",
+    "venue": "OBM No. 2",
+    "homeAway": "Home",
+    "ourScore": "",
+    "theirScore": ""
+  },
+  {
+    "date": "2026-08-01",
+    "time": "14:45",
+    "team": "Premier",
+    "opponent": "Sample opponent",
+    "venue": "OBM No. 1",
+    "homeAway": "Home",
+    "ourScore": "24",
+    "theirScore": "17"
+  },
+  {
+    "date": "2026-07-25",
+    "time": "14:45",
+    "team": "Premier",
+    "opponent": "Sample opponent",
+    "venue": "Away ground",
+    "homeAway": "Away",
+    "ourScore": "12",
+    "theirScore": "19"
+  }
+]

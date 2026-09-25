@@ -1,0 +1,26 @@
+[
+  {
+    "id": "new-website",
+    "title": "Welcome to the new OBM website",
+    "date": "2026-09-25",
+    "summary": "Draws, results, club news and registrations are now all in one place.",
+    "image": "",
+    "body": "<p>The club has a new website. Committee members can now update news, the draw, results, sponsors and events from a simple online editor.</p><p>If you spot something out of date, let the club secretary know.</p>"
+  },
+  {
+    "id": "prizegiving",
+    "title": "Senior prizegiving",
+    "date": "2026-09-12",
+    "summary": "Add the results and photos from the end-of-season prizegiving.",
+    "image": "",
+    "body": "<p>Replace this sample post with prizegiving results and a thank you to players, coaches and volunteers.</p>"
+  },
+  {
+    "id": "2027-registrations",
+    "title": "2027 registrations",
+    "date": "2026-09-01",
+    "summary": "How to register for next season, for juniors and seniors.",
+    "image": "",
+    "body": "<p>Registration links are on the Seniors and Juniors pages. Update this post when the 2027 season opens.</p>"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "intro": "OBM Junior Club runs rippa and tackle grades for boys and girls. Games are on Saturday mornings through the winter, with trainings one night a week.",
+  "grades": [
+    {
+      "grade": "Rippa (Under 6–8)",
+      "ages": "5–8 years",
+      "training": "Tuesday 5:00pm",
+      "notes": "Non-contact. Great first taste of rugby."
+    },
+    {
+      "grade": "Under 9–10",
+      "ages": "8–10 years",
+      "training": "Tuesday 5:30pm",
+      "notes": "Introduction to tackle with modified rules."
+    },
+    {
+      "grade": "Under 11–13",
+      "ages": "10–13 years",
+      "training": "Wednesday 5:30pm",
+      "notes": "Weight-restricted grades available."
+    },
+    {
+      "grade": "Girls Rugby",
+      "ages": "8–13 years",
+      "training": "Thursday 5:30pm",
+      "notes": "Girls-only teams and pathways."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What does my child need?",
+      "answer": "Boots or sneakers, a mouthguard and a drink bottle. Club shorts and socks are available through Club Gear."
+    },
+    {
+      "question": "How much are subs?",
+      "answer": "Add your junior subscription fees here."
+    }
+  ]
+}

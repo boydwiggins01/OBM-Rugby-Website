@@ -1,0 +1,23 @@
+{
+  "intro": "Our clubrooms are available for birthdays, funerals, meetings and team functions. Enquire using the form on the Contact page.",
+  "spaces": [
+    {
+      "name": "Clubrooms & bar",
+      "capacity": "Up to 120 guests",
+      "description": "Main function space with bar, kitchen access and views over the No. 1 field.",
+      "image": ""
+    },
+    {
+      "name": "Meeting room",
+      "capacity": "Up to 20 people",
+      "description": "Quiet room for committee meetings, workshops and training sessions.",
+      "image": ""
+    },
+    {
+      "name": "Fields",
+      "capacity": "2 full-size fields",
+      "description": "Available for trainings and events outside club fixtures.",
+      "image": ""
+    }
+  ]
+}

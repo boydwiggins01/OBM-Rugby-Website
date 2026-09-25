@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Premier",
+    "section": "Senior",
+    "coach": "To be confirmed",
+    "manager": "",
+    "training": "Tuesday & Thursday 6:00pm",
+    "description": "Our top men's side, competing in the Northland premier competition."
+  },
+  {
+    "name": "Premier Reserves",
+    "section": "Senior",
+    "coach": "To be confirmed",
+    "manager": "",
+    "training": "Tuesday & Thursday 6:00pm",
+    "description": "Development side and pathway into the Premier team."
+  },
+  {
+    "name": "Women",
+    "section": "Senior",
+    "coach": "To be confirmed",
+    "manager": "",
+    "training": "Wednesday 6:00pm",
+    "description": "Women's fifteens. New players always welcome."
+  },
+  {
+    "name": "Colts (Under 21)",
+    "section": "Senior",
+    "coach": "To be confirmed",
+    "manager": "",
+    "training": "Wednesday 6:00pm",
+    "description": "For players leaving school who want to keep playing."
+  },
+  {
+    "name": "Golden Oldies",
+    "section": "Senior",
+    "coach": "",
+    "manager": "To be confirmed",
+    "training": "Social",
+    "description": "Social rugby for the over 35s."
+  }
+]

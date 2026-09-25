@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OBM Rugby</title>
+<meta name="description" content="Old Boys Marist Rugby Football Club, Whangārei. Est. 1922. Senior and junior rugby, draws, results, news and club events.">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600&family=Michroma&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="notice" id="notice" href="#news" hidden></a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#home"><img src="images/crest.png" alt="OBM RFC crest"><span><b id="brand-name">OBM Rugby</b><small id="brand-sub">Whangārei · Est. 1922</small></span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main"></nav>
+  </div>
+</header>
+<main id="main"></main>
+<footer class="site-footer" id="footer"></footer>
+
+<!-- Netlify reads this hidden copy to set up the contact form. Leave it in place. -->
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="bot-field"><input name="name"><input name="email"><select name="topic"></select><textarea name="message"></textarea>
+</form>
+<script src="assets/app.js"></script>
+</body>
+</html>

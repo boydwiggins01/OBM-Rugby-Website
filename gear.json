@@ -1,0 +1,30 @@
+{
+  "intro": "Official OBM kit and leisurewear made by Dynasty Sport. Orders are placed through the online store.",
+  "storeLink": "https://www.dynastysport.co.nz/",
+  "items": [
+    {
+      "name": "OBM Hoodie",
+      "price": "$75",
+      "description": "Navy hoodie with green and white yoke. Personalise with your name on the back.",
+      "image": ""
+    },
+    {
+      "name": "Training Tee",
+      "price": "$40",
+      "description": "Lightweight training top in club navy.",
+      "image": ""
+    },
+    {
+      "name": "Club Shorts",
+      "price": "$35",
+      "description": "Playing shorts for juniors and seniors.",
+      "image": ""
+    },
+    {
+      "name": "Club Socks",
+      "price": "$20",
+      "description": "Navy and green hooped socks.",
+      "image": ""
+    }
+  ]
+}

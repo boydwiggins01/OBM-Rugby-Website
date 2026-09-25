@@ -1,0 +1,192 @@
+# Pages CMS configuration — this is what turns the files in /content into
+# friendly forms at https://app.pagescms.org. Each entry below becomes a menu item.
+media:
+  input: images
+  output: /images
+
+content:
+  - name: news
+    label: News posts
+    type: file
+    path: content/news.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Headline, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: summary, label: Short summary, type: text, description: "One or two sentences shown on the news cards." }
+      - { name: image, label: Photo, type: image }
+      - { name: body, label: Full story, type: rich-text, options: { format: html } }
+
+  - name: fixtures
+    label: Draws & results
+    type: file
+    path: content/fixtures.json
+    format: json
+    list: true
+    fields:
+      - { name: date, label: Date, type: date, required: true }
+      - { name: time, label: Kick-off, type: string, description: "e.g. 14:45" }
+      - { name: team, label: OBM team, type: string, required: true, description: "Use the same team name each time (e.g. Premier) so the filters on the Draws page work." }
+      - { name: opponent, label: Opponent, type: string, required: true }
+      - { name: venue, label: Venue, type: string }
+      - name: homeAway
+        label: Home or away
+        type: select
+        options: { values: [Home, Away] }
+      - { name: ourScore, label: OBM score, type: string, description: "Leave blank until the game is played." }
+      - { name: theirScore, label: Opponent score, type: string }
+
+  - name: events
+    label: Club events
+    type: file
+    path: content/events.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Event, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: time, label: Time, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: description, label: Details, type: text }
+
+  - name: teams
+    label: Teams & coaches
+    type: file
+    path: content/teams.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Team name, type: string, required: true }
+      - name: section
+        label: Senior or junior
+        type: select
+        options: { values: [Senior, Junior] }
+      - { name: coach, label: Coach, type: string }
+      - { name: manager, label: Manager, type: string }
+      - { name: training, label: Training times, type: string }
+      - { name: description, label: About the team, type: text }
+
+  - name: sponsors
+    label: Sponsors
+    type: file
+    path: content/sponsors.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Sponsor name, type: string, required: true }
+      - name: tier
+        label: Sponsor level
+        type: select
+        options: { values: [Premier Partner, Apparel Partner, Club Supporter, Junior Club Sponsor, Community Funder] }
+      - { name: logo, label: Logo, type: image, description: "PNG with a transparent or white background works best." }
+      - { name: link, label: Website, type: string }
+
+  - name: about
+    label: About the club
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - { name: history, label: Club history, type: rich-text, options: { format: html } }
+      - name: honours
+        label: Honours board
+        type: object
+        list: true
+        fields:
+          - { name: year, label: Year, type: string }
+          - { name: title, label: Honour, type: string }
+      - name: committee
+        label: Committee
+        type: object
+        list: true
+        fields:
+          - { name: role, label: Role, type: string }
+          - { name: name, label: Name, type: string }
+          - { name: email, label: Email, type: string }
+
+  - name: juniors
+    label: Junior club
+    type: file
+    path: content/juniors.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - name: grades
+        label: Grades
+        type: object
+        list: true
+        fields:
+          - { name: grade, label: Grade, type: string }
+          - { name: ages, label: Ages, type: string }
+          - { name: training, label: Training, type: string }
+          - { name: notes, label: Notes, type: string }
+      - name: faq
+        label: Parent questions
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: text }
+
+  - name: venue
+    label: Venue hire
+    type: file
+    path: content/venue.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - name: spaces
+        label: Spaces for hire
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: capacity, label: Capacity, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Photo, type: image }
+
+  - name: gear
+    label: Club gear
+    type: file
+    path: content/gear.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - { name: storeLink, label: Online store link, type: string }
+      - name: items
+        label: Products
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Product, type: string }
+          - { name: price, label: Price, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Photo, type: image }
+
+  - name: settings
+    label: Club settings
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - { name: clubName, label: Full club name, type: string }
+      - { name: shortName, label: Short name, type: string }
+      - { name: established, label: Year established, type: string }
+      - { name: location, label: Town, type: string }
+      - { name: announcement, label: Announcement bar, type: string, description: "Green bar at the top of every page. Leave blank to hide it." }
+      - { name: heroEyebrow, label: Home banner small text, type: string }
+      - { name: heroTitle, label: Home banner headline, type: string }
+      - { name: heroText, label: Home banner text, type: text }
+      - { name: heroImage, label: Home banner photo, type: image, description: "Optional. A wide team photo works best." }
+      - { name: seniorRegistrationLink, label: Senior registration link, type: string }
+      - { name: juniorRegistrationLink, label: Junior registration link, type: string }
+      - { name: drawsLink, label: Competition draw link, type: string, description: "Link to the full union draw and standings." }
+      - { name: address, label: Clubrooms address, type: string }
+      - { name: email, label: Club email, type: string }
+      - { name: phone, label: Club phone, type: string }
+      - { name: clubroomHours, label: Clubroom hours, type: string }
+      - { name: facebook, label: Facebook link, type: string }
+      - { name: instagram, label: Instagram link, type: string }
+      - { name: youtube, label: YouTube link, type: string }
