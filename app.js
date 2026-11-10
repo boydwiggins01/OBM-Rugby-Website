@@ -1,5 +1,5 @@
 /* OBM Rugby website.
-   All page text lives in /content/*.json and is edited through Pages CMS (see README.md).
+   All page text lives in the *.json files and is edited through Pages CMS (see README.md).
    This script loads that content and draws each page. You shouldn't need to edit it to update the site. */
 (function () {
   "use strict";
@@ -19,7 +19,7 @@
   ];
   var TIER_ORDER = ["Premier Partner", "Apparel Partner", "Club Supporter", "Junior Club Sponsor", "Community Funder"];
   var C = {};
-  var CREST = "images/crest.png";
+  var CREST = "crest.png";
 
   /* ---------- helpers ---------- */
   function esc(s) {
@@ -325,7 +325,7 @@
   }
 
   if (window.OBM_CONTENT) { start(window.OBM_CONTENT); return; }
-  Promise.all(FILES.map(function (f) { return fetch("content/" + f + ".json", { cache: "no-cache" }).then(function (r) { return r.json(); }); }))
+  Promise.all(FILES.map(function (f) { return fetch(f + ".json", { cache: "no-cache" }).then(function (r) { return r.json(); }); }))
     .then(function (arr) { var d = {}; FILES.forEach(function (f, i) { d[f] = arr[i]; }); start(d); })
     .catch(function () { document.getElementById("main").innerHTML = '<div class="wrap section"><div class="empty">The site content didn\'t load. Refresh the page to try again.</div></div>'; });
 })();
