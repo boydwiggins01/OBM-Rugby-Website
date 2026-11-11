@@ -249,3 +249,60 @@ textarea { min-height: 130px; resize: vertical; }
   .navbar .nav a { padding: 14px 12px 12px; font-size: .9rem; }
   .bar { min-height: 64px; }
 }
+
+/* Phone layout */
+@media (max-width: 600px) {
+  /* Only the page tabs stay pinned when scrolling; the crest bar scrolls away */
+  .bar { min-height: 60px; height: 60px; }
+  .site-header { top: -60px; }
+  .brand img { height: 40px; }
+  .brand b { font-size: .95rem; }
+  .brand small { font-size: .7rem; }
+  .notice { font-size: .85rem; padding-block: 6px; }
+
+  /* Tighter vertical rhythm */
+  .section { padding-block: 36px; }
+  .section + .section { padding-top: 0; }
+  .page-head .wrap { padding-block: 24px 28px; }
+  .hero-inner { padding-block: 36px 64px; }
+
+  /* Buttons fill the width so they're easy to tap */
+  .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-actions .btn, .draws-panel .btn { justify-content: center; padding-inline: 12px; }
+  .draws-panel .hero-actions { width: 100%; grid-template-columns: 1fr; }
+  .hero-actions .btn { font-size: .9rem; letter-spacing: .06em; }
+  .section-head { flex-wrap: wrap; gap: 12px; }
+  .section-head .btn, form .btn { width: 100%; justify-content: center; }
+
+  /* News, gear and venue cards become compact rows with a thumbnail */
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .card:has(.card-media) { display: grid; grid-template-columns: 112px 1fr; }
+  .card-media { aspect-ratio: auto; height: 100%; min-height: 112px; }
+  .card-body { padding: 14px 16px; gap: 6px; }
+  .card-body h3 { font-size: 1.05rem; }
+  .card-body p { font-size: .92rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* Tables (committee, honours, junior grades) stack into simple cards */
+  .table-wrap { border: 0; background: none; overflow: visible; }
+  .table-wrap table, .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; min-width: 0; width: auto; }
+  .table-wrap thead { display: none; }
+  .table-wrap tr { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 10px; }
+  .table-wrap td { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 5px 0; border: 0; }
+  .table-wrap td::before { content: attr(data-label); font: 600 .78rem/1.6 var(--f-label); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .table-wrap td:empty { display: none; }
+  .table-wrap td:first-child { display: block; font-weight: 600; font-size: 1.02rem; padding-bottom: 2px; }
+  .table-wrap td:first-child::before { display: none; }
+
+  /* Sponsors: two logos per row, smaller boxes */
+  .logos, .logos.lg { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .logo, .logos.lg .logo { min-height: 72px; padding: 10px; font-size: .9rem; }
+  .logo img { max-height: 48px; }
+
+  /* Footer: the page tabs are always at the top, so skip the duplicate link list */
+  .site-footer { padding-block: 32px 22px; }
+  .foot { grid-template-columns: 56px 1fr; gap: 16px 14px; }
+  .foot-crest { width: 56px; padding: 6px; border-radius: 8px; }
+  .foot > :nth-child(3) { display: none; }
+  .foot > :nth-child(4) { grid-column: 1 / -1; }
+  .foot-base { margin-top: 20px; }
+}
