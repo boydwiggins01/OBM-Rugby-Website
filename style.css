@@ -306,3 +306,7 @@ textarea { min-height: 130px; resize: vertical; }
   .foot > :nth-child(4) { grid-column: 1 / -1; }
   .foot-base { margin-top: 20px; }
 }
+
+/* Placeholder picture: the crest sits on its own white tile, in front of the green stripe */
+.card-media.blank::before { content: ""; position: absolute; inset: 0; background: linear-gradient(162deg, transparent 0 55%, var(--green) 55% 58%, rgba(255,255,255,.08) 58%); }
+.card-media.blank::after { inset: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); box-sizing: content-box; height: 56%; aspect-ratio: 360 / 509; padding: 6px; border-radius: 8px; background: #fff var(--crest, none) center / contain no-repeat; background-origin: content-box; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
