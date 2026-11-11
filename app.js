@@ -298,7 +298,11 @@
     var page = render[parts[0]] ? parts[0] : "home";
     document.getElementById("main").innerHTML = render[page](parts.slice(1).join("."));
     document.querySelectorAll("#nav a").forEach(function (a) {
-      if (a.dataset.page === page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+      if (a.dataset.page === page) {
+        a.setAttribute("aria-current", "page");
+        var n = a.parentNode;
+        if (n.scrollWidth > n.clientWidth) n.scrollLeft = a.offsetLeft - (n.clientWidth - a.offsetWidth) / 2;
+      } else a.removeAttribute("aria-current");
     });
     document.getElementById("nav").classList.remove("open");
     document.getElementById("nav-toggle").setAttribute("aria-expanded", "false");
