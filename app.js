@@ -304,6 +304,12 @@
         if (n.scrollWidth > n.clientWidth) n.scrollLeft = a.offsetLeft - (n.clientWidth - a.offsetWidth) / 2;
       } else a.removeAttribute("aria-current");
     });
+    document.querySelectorAll("#main table").forEach(function (t) {
+      var heads = [].map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent; });
+      t.querySelectorAll("tbody tr").forEach(function (tr) {
+        [].forEach.call(tr.children, function (td, i) { td.setAttribute("data-label", heads[i] || ""); });
+      });
+    });
     document.getElementById("nav").classList.remove("open");
     document.getElementById("nav-toggle").setAttribute("aria-expanded", "false");
     if (keepScroll !== true) window.scrollTo(0, 0);
