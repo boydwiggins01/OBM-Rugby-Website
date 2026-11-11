@@ -232,3 +232,20 @@ textarea { min-height: 130px; resize: vertical; }
 .draws-panel .label { color: var(--gold); }
 .draws-panel h2 { color: #fff; margin: 6px 0 8px; }
 .draws-panel p { margin: 0; max-width: 56ch; opacity: .9; }
+
+/* Page tabs: a navy bar across the top of every page (replaces the Menu button) */
+.nav-toggle { display: none !important; }
+.site-header { border-bottom: 0; }
+.navbar { background: var(--navy); }
+.navbar .wrap { padding-inline: 0; }
+.navbar .nav { display: flex; position: static; flex-direction: row; flex-wrap: nowrap; justify-content: center; gap: 0; padding: 0; background: none; border: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.navbar .nav::-webkit-scrollbar { display: none; }
+.navbar .nav a { flex: none; color: #fff; padding: 15px 11px 13px; border-radius: 0; font-size: .95rem; white-space: nowrap; box-shadow: inset 0 -3px 0 transparent; }
+.navbar .nav a:hover { background: rgba(255,255,255,.08); }
+.navbar .nav a[aria-current="page"] { color: var(--gold); box-shadow: inset 0 -3px 0 var(--green); }
+.navbar .nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+@media (max-width: 1140px) {
+  .navbar .nav { justify-content: flex-start; padding: 0 var(--gutter); mask-image: linear-gradient(90deg, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  .navbar .nav a { padding: 14px 12px 12px; font-size: .9rem; }
+  .bar { min-height: 64px; }
+}
