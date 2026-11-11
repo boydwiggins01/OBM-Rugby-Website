@@ -125,10 +125,10 @@
       '<a href="#juniors"><b>Junior Club</b><span>Rippa to Under 13</span></a>' +
       '<a href="#draws"><b>Draws &amp; Results</b><span>This week\'s games</span></a>' +
       '<a href="#gear"><b>Club Gear</b><span>Hoodies, shorts &amp; socks</span></a></nav></div>' +
-      '<section class="section"><div class="wrap split"><div><div class="section-head"><div><span class="label">Coming up</span><h2>Next fixtures</h2></div><a class="more" href="#draws">Full draw →</a></div>' +
-      '<div class="fixtures">' + (up.length ? up.map(fixtureRow).join("") : empty("The draw for next season hasn't been added yet.")) + "</div></div>" +
+      ((up.length || rs.length) ? '<section class="section"><div class="wrap split"><div><div class="section-head"><div><span class="label">Coming up</span><h2>Next fixtures</h2></div><a class="more" href="#draws">Full draw →</a></div>' +
+      '<div class="fixtures">' + (up.length ? up.map(fixtureRow).join("") : empty("No upcoming games listed here. See the full draw.")) + "</div></div>" +
       '<div><div class="section-head"><div><span class="label">Scoreboard</span><h2>Latest results</h2></div></div><div class="fixtures">' +
-      (rs.length ? rs.map(fixtureRow).join("") : empty("Results appear here once scores are entered.")) + "</div></div></div></section>" +
+      (rs.length ? rs.map(fixtureRow).join("") : empty("Results appear here once scores are entered.")) + "</div></div></div></section>" : drawsPanel()) +
       '<section class="section"><div class="wrap"><div class="section-head"><div><span class="label">Club news</span><h2>From the clubrooms</h2></div><a class="more" href="#news">All news →</a></div>' +
       '<div class="grid">' + (nw.length ? nw.map(newsCard).join("") : empty("No news posts yet.")) + "</div></div></section>" +
       (ev.length ? '<section class="section"><div class="wrap"><div class="section-head"><div><span class="label">Calendar</span><h2>Club events</h2></div><a class="more" href="#news">All events →</a></div><div class="events">' + ev.map(eventItem).join("") + "</div></div></section>" : "") +
@@ -181,6 +181,13 @@
         faq.map(function (q) { return "<details><summary>" + esc(q.question) + "</summary><p>" + esc(q.answer) + "</p></details>"; }).join("") + "</div></div></section>" : "");
   };
 
+  function drawsPanel() {
+    var link = C.settings.drawsLink;
+    return '<section class="section"><div class="wrap"><div class="draws-panel"><div><span class="label">Draws, results &amp; ladders</span>' +
+      '<h2>Every OBM game, updated weekly</h2><p>Northland Rugby publishes the official draw, scores and standings for every OBM team on Rugby Xplorer.</p></div>' +
+      '<div class="hero-actions"><a class="btn btn-green" href="#draws">See this week\'s games</a>' + (link ? '<a class="btn btn-line"' + ext(link) + ">Open Rugby Xplorer</a>" : "") + "</div></div></div></section>";
+  }
+
   var drawFilter = "All";
   render.draws = function () {
     var teams = ["All"];
@@ -189,12 +196,19 @@
     var pick = function (f) { return drawFilter === "All" || f.team === drawFilter; };
     var up = upcoming().filter(pick), rs = results().filter(pick);
     var link = C.settings.drawsLink;
-    return pageHead("Draws & Results", "Draws & results", "Every OBM game, home and away.") +
-      '<section class="section"><div class="wrap"><div class="filters" role="group" aria-label="Filter by team">' +
+    var embed = /^https:\/\/xplorer\.rugby\//.test(link || "");
+    var own = list(C.fixtures).length ? '<section class="section"><div class="wrap">' + (embed ? '<div class="section-head"><div><span class="label">Club picks</span><h2>Featured games</h2></div></div>' : "") +
+      '<div class="filters" role="group" aria-label="Filter by team">' +
       teams.map(function (t) { return '<button class="chip" data-team="' + esc(t) + '" aria-pressed="' + (t === drawFilter) + '">' + esc(t) + "</button>"; }).join("") + "</div>" +
       '<div class="split"><div><h2 style="margin-bottom:16px">Upcoming</h2><div class="fixtures">' + (up.length ? up.map(fixtureRow).join("") : empty("No upcoming games in the draw.")) + "</div></div>" +
-      '<div><h2 style="margin-bottom:16px">Results</h2><div class="fixtures">' + (rs.length ? rs.map(fixtureRow).join("") : empty("No results yet.")) + "</div>" +
-      (link ? '<p style="margin-top:18px"><a' + ext(link) + ">Full competition draw and standings →</a></p>" : "") + "</div></div></div></section>";
+      '<div><h2 style="margin-bottom:16px">Results</h2><div class="fixtures">' + (rs.length ? rs.map(fixtureRow).join("") : empty("No results yet.")) + "</div></div></div></div></section>" : "";
+    var xp = embed ? '<section class="section"><div class="wrap"><div class="section-head"><div><span class="label">Official draw</span><h2>Fixtures, results &amp; ladders</h2></div>' +
+      '<a class="btn btn-green"' + ext(link) + ">Open full screen</a></div>" +
+      '<p class="xp-note">Use the Season, Competition and Team boxes to find your team. Tap Ladder for the standings. Supplied by Northland Rugby via Rugby Xplorer.</p>' +
+      '<div class="xp-frame"><iframe src="' + esc(link) + '" title="OBM draw, results and ladders on Rugby Xplorer" loading="lazy"></iframe></div></div></section>' :
+      (link ? '<section class="section"><div class="wrap"><p><a' + ext(link) + ">Full competition draw and standings →</a></p></div></section>" : "");
+    if (!own && !xp) own = '<section class="section"><div class="wrap">' + empty("The draw hasn't been added yet.") + "</div></section>";
+    return pageHead("Draws & Results", "Draws & results", "Every OBM game, home and away.") + xp + own;
   };
 
   render.news = function (sub) {
